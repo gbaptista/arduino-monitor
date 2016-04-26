@@ -38,12 +38,12 @@ void loop() {
 
 ## Install and Run
 
+You can use [nvm](https://github.com/creationix/nvm) to switch between node versions:
+
 ```
-cat .nvmrc # VERSION
+nvm install 4.1.1
 
-nvm install VERSION
-
-nvm use VERSION
+nvm use 4.1.1
 
 npm install
 
