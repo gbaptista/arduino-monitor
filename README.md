@@ -1,10 +1,21 @@
 # Arduino Monitor
 
-**Arduino Experiments**
+Arduino monitor interface for experiments.
 
+A desktop app built on [Electron](http://electron.atom.io/).
+
+* Demos:
+  - [Control Leds with a Potentiometer](#control-leds-with-a-potentiometer)
+  - [Voltage Through the Tongue:](#voltage-through-the-tongue)
 * [Arduino Code to Upload](#arduino-code-to-upload)
 * [Install and Run](#install-and-run)
 
+
+#### Control Leds with a Potentiometer:
+[![Control Leds with a Potentiometer](https://github.com/gbaptista/arduino-monitor/raw/master/demos/demo-led.png)](https://www.youtube.com/watch?v=J7ZGo12p-gg)
+
+#### Voltage Through the Tongue:
+[![Voltage Through the Tongue ](https://github.com/gbaptista/arduino-monitor/raw/master/demos/demo-tongue.png)](https://www.youtube.com/watch?v=VGq5nEkoSQ8)
 
 ## Arduino Code to Upload
 ```c_cpp
