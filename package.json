@@ -1,0 +1,30 @@
+{
+  "name": "arduino-monitor",
+  "version": "1.0.0",
+  "description": "Arduino experiments.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbaptista/arduino-monitor.git"
+  },
+  "keywords": [
+    "arduino"
+  ],
+  "author": "Guilherme Baptista",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "http://gbaptista.com.br"
+  },
+  "homepage": "http://gbaptista.com.br",
+  "devDependencies": {
+    "electron-packager": "^6.0.2",
+    "electron-prebuilt": "0.35.5",
+    "electron-rebuild": "^1.1.3"
+  },
+  "dependencies": {
+    "serialport": "2.1.0"
+  }
+}

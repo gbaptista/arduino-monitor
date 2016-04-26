@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Arduino Monitor</title>
+
+    <link rel="stylesheet" href="./css/bootstrap-3.3.6.min.css">
+    <style type="text/css">
+      .progress-bar {
+        -webkit-transition:width .3s ease;
+        -o-transition:width .3s ease;
+        transition:width .3s ease;
+      }​
+    </style>
+  </head>
+  <body>
+    <br />
+
+    <div class="container-fluid" id="container">
+      <div class="row">
+        <div class="col-md-12 options">
+        <div class="panel panel-default">
+          <div class="panel-heading">Avaliable ports:</div>
+          <div class="panel-body">
+            <form id="monitor-form">
+              Port:
+              <select id="serial-ports" name="serial-ports">
+              </select>
+              &nbsp;&nbsp;&nbsp;
+              Analog Input:
+              <select id="analog-inputs" name="analog-inputs">
+                <option value="0" selected="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+              &nbsp;&nbsp;&nbsp;
+              <button class="btn btn-primary btn-xs" type="submit">add monitor</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <script id="analog-input-partial" type="text/x-handlebars-template">
+      <div class="panel panel-default">
+        <div class="panel-heading">{{serial_port}} - Analog Input {{analog_input}}: A{{analog_input}}</div>
+        <div class="panel-body">
+          <div class="row analog-input" id="{{id}}" data-serial-port="{{serial_port}}">
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script id="options-partial" type="text/x-handlebars-template">
+      <div class="col-md-4 options">
+        <div class="panel panel-default">
+          <div class="panel-heading">Options</div>
+          <div class="panel-body">
+            Decimal:
+            <select class="decimal-places">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+              <option value="10">10</option>
+            </select>
+
+            &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-info btn-xs reconnect" type="button">reconnect</button>
+            &nbsp;
+            <button class="btn btn-danger btn-xs remove" type="button">remove</button>
+          </div>
+          <div class="panel-footer">Your preferences.</div>
+        </div>
+      </div>
+    </script>
+
+    <script id="reporter-partial" type="text/x-handlebars-template">
+      <div class="col-md-4 reporter-{{key}}">
+        <div class="panel panel-default">
+          <div class="panel-heading">{{title}}</div>
+          <div class="panel-body text-right">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="progress" style="margin-bottom:0;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <span class="value">0</span>{{symbol}}
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">Maximum value observed: <span class="max">0</span>{{symbol}}</div>
+        </div>
+      </div>
+    </script>
+
+    <script>window.$ = window.jQuery = require('./js/jquery-1.12.2.min.js');</script>
+    <script>require('./js/bootstrap-3.3.6.min.js');</script>
+    <script>window.Handlebars = require('./js/handlebars-v4.0.5.js');</script>
+
+    <script>require('./js/interface.js');</script>
+  </body>
+</html>
