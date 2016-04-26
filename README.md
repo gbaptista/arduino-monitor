@@ -9,7 +9,9 @@ cat .nvmrc # VERSION
 
 nvm install VERSION
 
-# package.json > postinstall
+nvm use VERSION
+
+npm install
 
 npm start
 ```
